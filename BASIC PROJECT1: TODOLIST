@@ -1,7 +1,12 @@
 # Define an empty list to store tasks
 tasks = []
 
-# Function to display the to-do list
+
+
+
+
+
+# Function to display the to-do list iterates using an enum function
 def display_tasks():
     if not tasks:
         print("Your to-do list is empty.")
@@ -10,22 +15,39 @@ def display_tasks():
         for i, task in enumerate(tasks, start=1):
             status = "Done" if task["completed"] else "Not Done"
             print(f"{i}. {task['task']} ({status})")
+            
+            
+            
+            
+            
+            
 
-# Function to add a task to the to-do list
+# Function to add a task to the to-do list creates a dict for the task with keys
+#"task" and "completed" 
 def add_task(task_name):
     task = {"task": task_name, "completed": False}
     tasks.append(task)
     print(f"Task '{task_name}' added to your to-do list.")
+    
+    
+    
+    
+    
 
-# Function to mark a task as completed
+# Function to mark a task as completed checks if it is valid n then completes it
 def mark_completed(task_number):
     if 1 <= task_number <= len(tasks):
         tasks[task_number - 1]["completed"] = True
         print(f"Task {task_number} marked as completed.")
     else:
         print("Invalid task number. Please enter a valid task number.")
+        
+        
+        
+        
+        
 
-# Function to remove a task from the to-do list
+# Function to remove a task from the to-do list using pop()
 def remove_task(task_number):
     if 1 <= task_number <= len(tasks):
         removed_task = tasks.pop(task_number - 1)
