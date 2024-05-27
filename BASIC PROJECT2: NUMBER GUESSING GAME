@@ -10,7 +10,7 @@ def intro():
     return name  # Return the name entered by the player
 
 def pick(name):
-    number = random.randint(1, 200)
+    number = random.randint(1, 200)  #randmonly picks the number inclusive of the range 1 and 200
     guessesTaken = 0
     while guessesTaken < 6:  # If the number of guesses is less than 6
         time.sleep(0.25)
